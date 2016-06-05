@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PCBInfo>
+	<Thickness>1.56</Thickness>
+	<SizeX>150</SizeX>
+	<SizeY>200</SizeY>
+	<Fiducial>
+		<X>100.50</X>
+		<Y>100.50</Y>
+	</Fiducial>
+	<Fiducial>
+		<X>200.50</X>
+		<Y>200.50</Y>
+	</Fiducial>
+</PCBInfo>
+ <ComponentList>
+	<Component>
+		<Name>R1</Name>
+		<Value>100</Value>
+		<X>100.50</X>
+		<Y>100.50</Y>
+		<R>90</R>
+		<Height>3.00</Height>
+		<Package>0603</Package>
+		<Comments>Other info</Comments>
+		<Skip>YES</Skip>
+	</Component>
+	<Component>
+		<Name>R2</Name>
+		<Value>200</Value>
+		<X>150.50</X>
+		<Y>100.50</Y>
+		<R>90</R>
+		<Height>1.00</Height>
+		<Package>0603</Package>
+		<Comments>Other info</Comments>
+		<Skip>YES</Skip>
+	</Component>
+</ComponentList> 

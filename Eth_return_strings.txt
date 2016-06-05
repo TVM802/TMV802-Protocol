@@ -1,0 +1,100 @@
+4 bytes per coloumn
+
+ConMove		0 2e0 3fffff0 0 0 0 0 0 0 0 0 0
+DotMove		0 360 3fffff0 0 0 0 0 0 0 0 0 0
+XlimNeg		0 360 3fffff2 0 0 0 0 0 0 0 0 0
+XlimPos		0 360 3fffff1 0 0 0 0 0 0 0 0 0
+YlimNeg		0 360 3fffff8 0 0 0 0 0 0 0 0 0
+YlimPos		0 360 3fffff4 0 0 0 0 0 0 0 0 0
+PickDwn		0 360 3f7fff0 0 0 0 0 0 0 0 0 0
+
+
+Playing with original program (at high speed):
+
+format:
++0  +4   +8     +12        +16      +20    +24    +28   +32
+0 2c0 3fffff0 STRIP_POS NOZZLE_POS X_POS A1_ROT Y_POS A2_ROT 0 0 0
+
+low_speed command:
+0 340 3fffff0 0 0 X_POS 0 Y_POS 0 0 0 0
+
+pick_down command:
+0 42c0 3f7fff0 0 0 X_POS 0 Y_POS 0 0 0 0 (42c0 is responsible for the command, 3f7f is sensor)
+
+Pump_on command:
+0 6c8 3fffff0 0 0 X_POS 0 Y_POS 0 0 0 0
+
+Vaccum_1 command:
+0 2c4 3fffff0 0 0 X_POS 0 Y_POS 0 0 0 0
+
+Vaccum_2 command:
+0 22c0 3fffff0 0 0 X_POS 0 Y_POS 0 0 0 0
+
+Blowing_1 command:
+0 2c2 3fffff0 0 0 X_POS 0 Y_POS 0 0 0 0
+
+Blowing_2 command:
+0 12c0 3fffff0 0 0 X_POS 0 Y_POS 0 0 0 0
+
+Pressure_1 sense:
+0 6cc 3ffffe0 0 0 X_POS 0 Y_POS 0 0 0 0
+
+Pressure_2 sense:
+0 6cc 3effff0 0 0 X_POS 0 Y_POS 0 0 0 0
+
+Pause Button:
+0 280 3fffff0 0 0 X_POS 0 Y_POS 0 0 0 0
+
+MOVEMENT COMMANDS:
+
+in the X axis (while holding the move button)
+0 2c0 3fffff0 0 0 X_POS 0 Y_POS 0 00020000 0 0
+in the X axis (when releasing move button)
+0 2c0 3fffff0 0 0 X_POS 0 Y_POS 0 00030000 0 0
+
+in the Y axis (while holding the move button)
+0 2c0 3fffff0 0 0 X_POS 0 Y_POS 0 0 00000002 0
+in the Y axis (when releasing move button)
+0 2c0 3fffff0 0 0 X_POS 0 Y_POS 0 0 00000003 0
+
+Nozzle up/down (while holding the move button)
+0 2c0 3fffff0 0 0 X_POS 0 Y_POS 0 00000200 0 0
+Nozzle up/down (when releasing move button)
+0 2c0 3fffff0 0 0 X_POS 0 Y_POS 0 00000300 0 0
+
+Strip activation (when pressing the button)
+0 2c0 3fffff0 0 0 X_POS 0 Y_POS 0 00000002 0 0
+
+Nozzle 2 Rotate (while holding the move button)
+0 2c0 3fffff0 0 0 X_POS 0 Y_POS 0 0 00000200 0
+Nozzle 2 Rotate (when releasing move button)
+0 2c0 3fffff0 0 0 X_POS 0 Y_POS 0 0 00000300 0
+
+Nozzle 1 Rotate (while holding the move button)
+0 2c0 3fffff0 0 0 X_POS 0 Y_POS 0 02000000 0 0
+Nozzle 1 Rotate (when releasing move button)
+0 2c0 3fffff0 0 0 X_POS 0 Y_POS 0 03000000 0 0
+
+
+Pushing Buttons on the machine itself:
+
+Move Y - (down button activated)
+0 2c0 3fff7f0 0 0 X_POS 0 Y_POS 0 0 00000002 0
+
+Move Y +
+0 2c0 3fbfff0 0 0 X_POS 0 Y_POS 0 0 00000002 0
+
+Move X - 
+0 2c0 3fefff0 0 0 X_POS 0 Y_POS 0 00020000 0 0
+
+Move X +
+0 2c0 3ffeff0 0 0 X_POS 0 Y_POS 0 00020000 0 0
+
+Pause/Cont
+0 280 3ffbff0 0 0 X_POS 0 Y_POS 0 00020000 0 0 (3ffb for button press, 280 for LED)
+
+Start/Stop
+0 2a0 3ff7ff0 0 0 X_POS 0 Y_POS 0 00020000 0 0 (2a0 for LED  3ff7 for button press)
+
+Step
+0 2a0 3ffdff0 0 0 X_POS 0 Y_POS 0 00020000 0 0 (3ffd for button press, 2a0 for run/stop LED)
